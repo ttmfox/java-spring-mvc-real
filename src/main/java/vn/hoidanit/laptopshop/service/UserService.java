@@ -2,6 +2,7 @@ package vn.hoidanit.laptopshop.service;
 
 import java.util.List;
 
+import org.eclipse.tags.shaded.org.apache.regexp.recompile;
 import org.springframework.stereotype.Service;
 
 import vn.hoidanit.laptopshop.domain.User;
@@ -32,5 +33,13 @@ public class UserService {
         System.out.println(eric);
         return eric;
 
+    }
+
+    public User getUserById(long id) {
+        return this.userRepository.findById(id);
+    }
+
+    public User deleteAUser(long id) {
+        return this.userRepository.deleteById(id);
     }
 }
